@@ -1,0 +1,27 @@
+{
+    "name": "mafacturation/ma-facturation-php-client",
+    "autoload": {
+        "psr-4": {
+            "Mafacturation\\MaFacturationPhpClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Houssa",
+            "email": "lucas@retinens.com"
+        },
+        {
+            "name": "MaFacturation",
+            "email": "support@mafacturation.be"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "phpstan/phpstan": "^1.8",
+        "friendsofphp/php-cs-fixer": "^3.9"
+    }
+}
