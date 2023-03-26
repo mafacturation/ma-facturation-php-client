@@ -33,3 +33,5 @@ $customers = $maFacturation->customers()->get();
 
 // Get a customer by ID
 $customer = $maFacturation->customers()->get(1);
+```
+
