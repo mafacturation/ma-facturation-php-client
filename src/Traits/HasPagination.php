@@ -1,8 +1,8 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Traits;
+namespace Mafacturation\PhpClient\Traits;
 
-use Mafacturation\MaFacturationPhpClient\MafacturationClient;
+use Mafacturation\PhpClient\MafacturationClient;
 
 trait HasPagination
 {

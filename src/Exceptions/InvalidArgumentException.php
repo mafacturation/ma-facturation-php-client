@@ -1,6 +1,6 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Exceptions;
+namespace Mafacturation\PhpClient\Exceptions;
 
 use InvalidArgumentException as BaseInvalidArgumentException;
 

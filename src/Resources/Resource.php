@@ -1,8 +1,8 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Resources;
+namespace Mafacturation\PhpClient\Resources;
 
-use Mafacturation\MaFacturationPhpClient\MafacturationClient;
+use Mafacturation\PhpClient\MafacturationClient;
 
 class Resource
 {

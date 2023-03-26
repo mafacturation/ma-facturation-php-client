@@ -1,6 +1,6 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Http;
+namespace Mafacturation\PhpClient\Http;
 
 use stdClass;
 use Psr\Http\Message\ResponseInterface;

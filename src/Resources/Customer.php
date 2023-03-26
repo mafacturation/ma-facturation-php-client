@@ -1,10 +1,10 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Resources;
+namespace Mafacturation\PhpClient\Resources;
 
-use Mafacturation\MaFacturationPhpClient\Http\Response;
-use Mafacturation\MaFacturationPhpClient\MafacturationClient;
-use Mafacturation\MaFacturationPhpClient\Traits\HasPagination;
+use Mafacturation\PhpClient\Http\Response;
+use Mafacturation\PhpClient\MafacturationClient;
+use Mafacturation\PhpClient\Traits\HasPagination;
 
 class Customer extends Resource
 {

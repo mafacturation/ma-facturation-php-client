@@ -1,5 +1,5 @@
 {
-    "name": "mafacturation/ma-facturation-php-client",
+    "name": "mafacturation/php-client",
     "autoload": {
         "psr-4": {
             "Mafacturation\\MaFacturationPhpClient\\": "src/"

@@ -1,18 +1,18 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient;
+namespace Mafacturation\PhpClient;
 
 use Exception;
 use GuzzleHttp\Client;
-use Mafacturation\MaFacturationPhpClient\Exceptions\InternalServerError;
-use Mafacturation\MaFacturationPhpClient\Exceptions\NotAllowed;
-use Mafacturation\MaFacturationPhpClient\Exceptions\NotFound;
-use Mafacturation\MaFacturationPhpClient\Exceptions\NotValid;
-use Mafacturation\MaFacturationPhpClient\Exceptions\PerformingMaintenance;
-use Mafacturation\MaFacturationPhpClient\Exceptions\TooManyAttempts;
-use Mafacturation\MaFacturationPhpClient\Exceptions\Unauthenticated;
-use Mafacturation\MaFacturationPhpClient\Http\Response;
-use Mafacturation\MaFacturationPhpClient\Resources\Customer;
+use Mafacturation\PhpClient\Exceptions\InternalServerError;
+use Mafacturation\PhpClient\Exceptions\NotAllowed;
+use Mafacturation\PhpClient\Exceptions\NotFound;
+use Mafacturation\PhpClient\Exceptions\NotValid;
+use Mafacturation\PhpClient\Exceptions\PerformingMaintenance;
+use Mafacturation\PhpClient\Exceptions\TooManyAttempts;
+use Mafacturation\PhpClient\Exceptions\Unauthenticated;
+use Mafacturation\PhpClient\Http\Response;
+use Mafacturation\PhpClient\Resources\Customer;
 use Psr\Http\Message\ResponseInterface;
 
 class MafacturationClient

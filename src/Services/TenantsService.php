@@ -1,8 +1,8 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Services;
+namespace Mafacturation\PhpClient\Services;
 
-use Mafacturation\MaFacturationPhpClient\MafacturationClient;
+use Mafacturation\PhpClient\MafacturationClient;
 
 class TenantsService
 {

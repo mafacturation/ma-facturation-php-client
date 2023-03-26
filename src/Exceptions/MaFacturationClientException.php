@@ -1,6 +1,6 @@
 <?php
 
-namespace Mafacturation\MaFacturationPhpClient\Exceptions;
+namespace Mafacturation\PhpClient\Exceptions;
 
 class MafacturationClientException extends \Exception
 {
