@@ -3,12 +3,13 @@
 namespace Mafacturation\Resources;
 
 use Mafacturation\Http\Response;
+use Mafacturation\Mafacturation;
 
-class Tenant extends Resource
+class Company extends Resource
 {
-    public function __construct($client)
+    public function __construct(Mafacturation $client, int $id = null)
     {
-        parent::__construct($client);
+        parent::__construct($client, $id);
     }
 
     public function get(int $id = null)
@@ -28,7 +29,7 @@ class Tenant extends Resource
 
     public function buildEndpoint($path)
     {
-        $base = 'tenants';
+        $base = 'companies';
         if ($this->getId()) {
             $base = "$base/{$this->getId()}";
         }

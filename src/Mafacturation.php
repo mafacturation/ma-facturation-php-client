@@ -13,6 +13,7 @@ use Mafacturation\Exceptions\TooManyAttempts;
 use Mafacturation\Exceptions\Unauthenticated;
 use Mafacturation\Http\Response;
 use Mafacturation\Resources\Customer;
+use Mafacturation\Resources\Company;
 use Psr\Http\Message\ResponseInterface;
 
 class Mafacturation
@@ -28,11 +29,16 @@ class Mafacturation
             'Content-Type'  => 'application/json',
         ];
         $this->httpClient = new  Client([
+            'http_errors' => false,
             'base_uri' => $this->url,
             'headers' => $headers,
         ]);
-        $this->setToken($token);
-        $this->setTenant($tenant);
+        if ($token) {
+            $this->setToken($token);
+        }
+        if ($tenant) {
+            $this->setTenant($tenant);
+        }
     }
 
     //set token function
@@ -92,6 +98,18 @@ class Mafacturation
     {
         return $this->customer($id);
     }
+
+    //tenants
+    public function tenant(int $id = null): Company
+    {
+        return new Company($this, $id);
+    }
+
+    public function tenants(int $id = null): Company
+    {
+        return $this->tenant($id);
+    }
+
 
 
 

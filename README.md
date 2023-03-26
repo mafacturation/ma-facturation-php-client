@@ -1,6 +1,6 @@
-# MaFacturation PHP Client
+# Mafacturation PHP Client
 
-This is a PHP client for the MaFacturation API. [MaFacturation](https://mafacturation.be) is a Belgian quoting & invoicing software for freelancers and small businesses, with a REST API.
+This is a PHP client for the Mafacturation API. [Mafacturation](https://mafacturation.be) is a Belgian quoting & invoicing software for freelancers and small businesses, with a REST API.
 
 ## Installation
 
@@ -12,9 +12,9 @@ composer require mafacturation/php-client
 
 ## Usage
 
-You can use the client like this, by passing the API key to the constructor. The API key can be found in the MaFacturation settings.
+You can use the client like this, by passing the API key to the constructor. The API key can be found in the Mafacturation settings.
 
-Tenancy is supported by passing the tenant ID to the constructor. The tenant ID can be found in the MaFacturation settings.
+Tenancy is supported by passing the tenant ID to the constructor. The tenant ID can be found in the Mafacturation settings.
 
 ```php
 use Mafacturation\Mafacturation;

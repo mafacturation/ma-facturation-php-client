@@ -6,7 +6,7 @@ use Exception;
 
 class InternalServerError extends Exception
 {
-    public function __construct($message = 'Internal Server Error on MaFacturation, please contact support.')
+    public function __construct($message = 'Internal Server Error on Mafacturation, please contact support.')
     {
         parent::__construct($message);
     }

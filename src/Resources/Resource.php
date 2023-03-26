@@ -11,7 +11,7 @@ class Resource
     private $endpoint;
     private $id;
 
-    public function construct(Mafacturation $client = null, int $id = null)
+    public function __construct(Mafacturation $client = null, int $id = null)
     {
         if ($client) {
             $this->setMafacturation($client);
@@ -48,5 +48,12 @@ class Resource
     {
         return $this->endpoint;
     }
+
+    public function getClient(): Mafacturation
+    {
+        return $this->maFacturation;
+    }
+
+
 
 }
