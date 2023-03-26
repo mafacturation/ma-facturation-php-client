@@ -8,20 +8,17 @@ use Mafacturation\Traits\HasPagination;
 
 class Customer extends Resource
 {
-    private $endpoint = 'customers';
-
     use HasPagination;
 
     public function construct(Mafacturation $client = null, int $id = null)
     {
         parent::construct($client, $id);
-
-        $this->setEndpoint($this->endpoint);
+        $this->setEndpoint("customers");
     }
 
     public function buildEndpoint(?string $path = null): string
     {
-        $base = $this->endpoint;
+        $base = $this->getEndpoint();
         if ($this->getId()) {
             $base = "$base/{$this->getId()}";
         }

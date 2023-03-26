@@ -6,7 +6,7 @@ use Mafacturation\Mafacturation;
 
 class Resource
 {
-    private Mafacturation $maFacturation;
+    private Mafacturation $client;
     private $action;
     private $endpoint;
     private $id;
@@ -14,7 +14,7 @@ class Resource
     public function __construct(Mafacturation $client = null, int $id = null)
     {
         if ($client) {
-            $this->setMafacturation($client);
+            $this->setClient($client);
         }
 
         if ($id) {
@@ -22,9 +22,9 @@ class Resource
         }
     }
 
-    public function setMafacturation(Mafacturation $client): self
+    public function setClient(Mafacturation $client): self
     {
-        $this->maFacturation = $client;
+        $this->client = $client;
         return $this;
     }
 
@@ -44,16 +44,14 @@ class Resource
         $this->endpoint = $endpoint;
     }
 
-    public function getEndpoint()
+    public function getEndpoint() : ?string
     {
         return $this->endpoint;
     }
 
     public function getClient(): Mafacturation
     {
-        return $this->maFacturation;
+        return $this->client;
     }
-
-
 
 }

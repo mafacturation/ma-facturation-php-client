@@ -20,19 +20,11 @@ class Mafacturation
 {
     public Client $httpClient;
     private string $url = 'https://mafacturation.be/api/';
-    private string $token;
+    private ?string $token = null;
+    private ?string $tenant_id = null;
 
     public function __construct(?string $token = null, ?string $tenant = null)
     {
-        $headers = [
-            'Accept' => 'application/json',
-            'Content-Type'  => 'application/json',
-        ];
-        $this->httpClient = new  Client([
-            'http_errors' => false,
-            'base_uri' => $this->url,
-            'headers' => $headers,
-        ]);
         if ($token) {
             $this->setToken($token);
         }
@@ -45,7 +37,7 @@ class Mafacturation
     public function setToken(string $token): void
     {
         $this->token = $token;
-        $this->httpClient->setDefaultOption('headers/X-Auth-Token', $token);
+        $this->refreshGuzzleInstance();
     }
 
     public function getToken(): string
@@ -55,7 +47,8 @@ class Mafacturation
 
     public function setTenant(string $tenant): void
     {
-        $this->httpClient->setDefaultOption('headers/X-Tenant', $tenant);
+        $this->tenant_id = $tenant;
+        $this->refreshGuzzleInstance();
     }
 
     public function makeAPICall(string $url, string $method = 'get', array $options = []): Response
@@ -110,7 +103,35 @@ class Mafacturation
         return $this->tenant($id);
     }
 
+    public function login(string $email, string $password, string $deviceName): Response
+    {
+        return $this->makeAPICall('sanctum/token', 'post', [
+            'json' => [
+                'email' => $email,
+                'password' => $password,
+                'device_name' => $deviceName,
+            ],
+        ]);
+    }
 
+    private function refreshGuzzleInstance()
+    {
+        $headers = [
+            'Accept' => 'application/json',
+            'Content-Type'  => 'application/json',
+        ];
+        if ($this->token) {
+            $headers['Authorization'] = 'Bearer ' . $this->token;
+        }
+        if($this->tenant_id){
+            $headers['X-Tenant'] = $this->tenant_id;
+        }
+        $this->httpClient = new Client([
+            'http_errors' => false,
+            'base_uri' => $this->url,
+            'headers' => $headers,
+        ]);
+    }
 
 
 }
