@@ -1,21 +1,21 @@
 <?php
 
-namespace Mafacturation\PhpClient;
+namespace Mafacturation;
 
 use Exception;
 use GuzzleHttp\Client;
-use Mafacturation\PhpClient\Exceptions\InternalServerError;
-use Mafacturation\PhpClient\Exceptions\NotAllowed;
-use Mafacturation\PhpClient\Exceptions\NotFound;
-use Mafacturation\PhpClient\Exceptions\NotValid;
-use Mafacturation\PhpClient\Exceptions\PerformingMaintenance;
-use Mafacturation\PhpClient\Exceptions\TooManyAttempts;
-use Mafacturation\PhpClient\Exceptions\Unauthenticated;
-use Mafacturation\PhpClient\Http\Response;
-use Mafacturation\PhpClient\Resources\Customer;
+use Mafacturation\Exceptions\InternalServerError;
+use Mafacturation\Exceptions\NotAllowed;
+use Mafacturation\Exceptions\NotFound;
+use Mafacturation\Exceptions\NotValid;
+use Mafacturation\Exceptions\PerformingMaintenance;
+use Mafacturation\Exceptions\TooManyAttempts;
+use Mafacturation\Exceptions\Unauthenticated;
+use Mafacturation\Http\Response;
+use Mafacturation\Resources\Customer;
 use Psr\Http\Message\ResponseInterface;
 
-class MafacturationClient
+class Mafacturation
 {
     public Client $httpClient;
     private string $url = 'https://mafacturation.be/api/';

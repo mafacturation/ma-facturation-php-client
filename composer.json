@@ -2,7 +2,7 @@
     "name": "mafacturation/php-client",
     "autoload": {
         "psr-4": {
-            "Mafacturation\\MaFacturationPhpClient\\": "src/"
+            "Mafacturation\\": "src/"
         }
     },
     "authors": [

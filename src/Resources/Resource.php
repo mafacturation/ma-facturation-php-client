@@ -1,17 +1,17 @@
 <?php
 
-namespace Mafacturation\PhpClient\Resources;
+namespace Mafacturation\Resources;
 
-use Mafacturation\PhpClient\MafacturationClient;
+use Mafacturation\Mafacturation;
 
 class Resource
 {
-    private MafacturationClient $maFacturation;
+    private Mafacturation $maFacturation;
     private $action;
     private $endpoint;
     private $id;
 
-    public function construct(MafacturationClient $client = null, int $id = null)
+    public function construct(Mafacturation $client = null, int $id = null)
     {
         if ($client) {
             $this->setMafacturation($client);
@@ -22,7 +22,7 @@ class Resource
         }
     }
 
-    public function setMafacturation(MafacturationClient $client): self
+    public function setMafacturation(Mafacturation $client): self
     {
         $this->maFacturation = $client;
         return $this;

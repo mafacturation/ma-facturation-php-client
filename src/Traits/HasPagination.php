@@ -1,8 +1,8 @@
 <?php
 
-namespace Mafacturation\PhpClient\Traits;
+namespace Mafacturation\Traits;
 
-use Mafacturation\PhpClient\MafacturationClient;
+use Mafacturation\Mafacturation;
 
 trait HasPagination
 {
@@ -11,7 +11,7 @@ trait HasPagination
      */
     protected $amountPerPage;
 
-    abstract public function getClient(): ?MafacturationClient;
+    abstract public function getClient(): ?Mafacturation;
 
     abstract public function getEndpoint(): ?string;
 

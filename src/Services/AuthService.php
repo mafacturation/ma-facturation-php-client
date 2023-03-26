@@ -1,14 +1,14 @@
 <?php
 
-namespace Mafacturation\PhpClient\Services;
+namespace Mafacturation\Services;
 
-use Mafacturation\PhpClient\MafacturationClient;
+use Mafacturation\Mafacturation;
 
 class AuthService
 {
-    private MafacturationClient $client;
+    private Mafacturation $client;
 
-    public function __construct(MafacturationClient $client)
+    public function __construct(Mafacturation $client)
     {
         $this->client = $client;
     }

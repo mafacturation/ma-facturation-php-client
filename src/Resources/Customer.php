@@ -1,10 +1,10 @@
 <?php
 
-namespace Mafacturation\PhpClient\Resources;
+namespace Mafacturation\Resources;
 
-use Mafacturation\PhpClient\Http\Response;
-use Mafacturation\PhpClient\MafacturationClient;
-use Mafacturation\PhpClient\Traits\HasPagination;
+use Mafacturation\Http\Response;
+use Mafacturation\Mafacturation;
+use Mafacturation\Traits\HasPagination;
 
 class Customer extends Resource
 {
@@ -12,7 +12,7 @@ class Customer extends Resource
 
     use HasPagination;
 
-    public function construct(MafacturationClient $client = null, int $id = null)
+    public function construct(Mafacturation $client = null, int $id = null)
     {
         parent::construct($client, $id);
 
