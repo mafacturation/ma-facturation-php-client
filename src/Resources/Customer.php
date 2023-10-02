@@ -42,6 +42,23 @@ class Customer extends Resource
             : $this->callApi();
     }
 
+    public function create(array $data): Response
+    {
+        return $this->callApi(null, 'post', $data);
+    }
+
+    public function update(int $id, array $data): Response
+    {
+        $this->setId($id);
+        return $this->callApi($id, 'put', $data);
+    }
+
+    public function delete(int $id): Response
+    {
+        $this->setId($id);
+        return $this->callApi($id, 'delete');
+    }
+
     public function callApi(string $path = null, string $method = 'get', array $options = []): Response
     {
         return $this->getClient()
