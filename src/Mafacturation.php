@@ -31,6 +31,7 @@ class Mafacturation
         if ($tenant) {
             $this->setTenant($tenant);
         }
+        $this->refreshGuzzleInstance();
     }
 
     //set token function
